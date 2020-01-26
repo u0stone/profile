@@ -1,9 +1,7 @@
 # Profile(This) web app with ReactJS
 
 ### Currently Working. (Updating weekly)
-
-Builing this Profile page was started from late of January 2020. More feature
-will be added, as time goes by. 
+Building this Profile page was started from late January 2020. More features will be added, as time goes by.
 
 - ## What I am using
     - ReactJS(v16.12) :  Using class and functional way to create Components.
@@ -11,5 +9,6 @@ will be added, as time goes by.
     - Redux, Redux-Saga : Still working on **Contact to Frank**, and **Chatting with Frank**
     - Firebase : Hosting and DB server
     - Webpack : General use of loader and assisting development.
+    - Markdown-to-jsx : For portfolios parts. Each Portfolio is added by Markdown files.
 
-You can download full source from [github](http://github.com). `src/home.js` is main part.
+You can download full source from [github](https://github.com/u0stone/profile). `src/home.js` is main part.

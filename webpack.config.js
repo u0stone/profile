@@ -1,6 +1,7 @@
 'use strict'
 const path=require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -25,20 +26,19 @@ module.exports = {
             },{
                 loader:"markdown-loader"
             }]
-            
-        
-
         }]
     },
     plugins:[
 		new CopyWebpackPlugin ([{
 			context: '.public',
 			from: '*.*'
-		}])
+        }]),
+        new UglifyJSPlugin()
     ],
     devServer: {
         contentBase: './pub',
         host: 'localhost',
-        port: 8080
+        port: 8080,
+        compress: true,
     }
 }

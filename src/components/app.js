@@ -1,19 +1,21 @@
 import React from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import Login from './login'
+import resume from './Resume';
+import contact from './Contact';
 
-class App extends React.Component{
-    render(){
-        return (
-            <Router>
-                    <div>
-                        <Route exact path='/' component={Home}/>
-                        <Route exact path='/login' component={Login}/>
-                    </div>
-            </Router>
-        );
-    }
+class App extends React.Component {
+	render() {
+		return (
+			<Router>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/resume" component={resume} />
+					<Route exact path="/contact" component={contact} />
+				</Switch>
+			</Router>
+		);
+	}
 }
 export default App;
 
