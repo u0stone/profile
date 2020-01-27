@@ -13,8 +13,8 @@ import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import post1 from './blog-post.1.md';
-import post2 from './blog-post.2.md';
+import portfolio1 from './Portfolio1.md';
+import portfolio2 from './Portfolio2.md';
 //import post3 from './blog-post.3.md';
 
 const useStyles = makeStyles(theme => ({
@@ -25,18 +25,17 @@ const useStyles = makeStyles(theme => ({
 
 const sections = [
 	{ title: 'Resume', url: '/resume' },
-	{ title: 'Contact', url: '/contact' },
-	{ title: 'Style', url: '/style' },
-	{ title: 'Travel', url: '/travel' }
+	{ title: 'Email to Frank', url: '/contact' },
+/*	{ title: 'Style', url: '/style' },
+	{ title: 'Travel', url: '/travel' }*/
 ];
 
 const mainTitleImage = {
-	title: 'I am mostly wondering the WHY first, then the HOW.',
+	title: 'Happiness lies in the joy of achievement and the thrill of creative effort.',
   description:
-    'Since I have started Web Programming, most of the code is totally new to me. Every '+
-    'moment when I start a new language or framework, it wasn\'t easy at all. I studied '+
-    'by myself. However, when I recognize why is it useful then things can get easier.',
-	image: 'https://source.unsplash.com/random/?pattern, ?texture',
+    'I like imagination, but I profer to create something from it. '+
+    'Programming is a joyful tool to achieve it for me.',
+	image: 'https://source.unsplash.com/random/?texture',
 	imgText: 'main image description'
 	//  linkText: 'Continue reading…',
 	//  url:'/mainitem',
@@ -63,7 +62,7 @@ const featuredPosts = [
 	}
 ];
 
-const posts = [post1, post2]; //, post3];
+const portfolios = [portfolio1, portfolio2]; //, post3];
 
 const sidebar = {
 	title: 'About Me',
@@ -80,7 +79,7 @@ const sidebar = {
     'I am a person that can find my own right way well. I had a successful Embedded Programmer career. ' +
     'I managed my businesses successfully, I am fully ready to work and use what I\'ve studied.',
 	social: [
-		{ name: 'GitHub', icon: GitHubIcon, url: '#' },
+		{ name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/u0stone?tab=repositories' },
 		{ name: 'LinkedIn', icon: LinkedInIcon, url: '#' },
 		{ name: 'Facebook', icon: FacebookIcon, url: '#' }
 	]
@@ -91,16 +90,16 @@ export default function Home() {
 
     return (
         <React.Fragment>
-            {' '}
+            
             {/* frank: This allow have multiple elements return. ShortHand <></>. Same as <div>, If only one return. */}
             <CssBaseline /> {/* frank: Nomalize CSS Style 초기화 */}
             <Container maxWidth="lg">
-                {' '}
+                
                 {/* frank: Most basic layout Element. Center contents horizontally. */}
                 <Header
                     title="Frank's Profile and Portfolio"
                     sections={sections}
-                />{' '}
+                /> 
                 {/** Title and Top Menu */}
                 <main>
                     <MainTitleImage post={mainTitleImage} />
@@ -109,22 +108,23 @@ export default function Home() {
                             <FeaturedPost key={post.title} post={post} />
                         ))}
                     </Grid>
-                    <Grid container spacing={5} className={classes.mainGrid}>
-                        <Main title="Portfolio" posts={posts} />
+                   <Grid container spacing={5} className={classes.mainGrid}>
+                         <Main title="Portfolios" posts={portfolios} /> {/** 여기에 두개 */}
 
                         <Sidebar
                             title={sidebar.title}
                             description={sidebar.description}
                             social={sidebar.social}
                         />
+
                     </Grid>
                 </main>
             </Container>
             <Footer
-                title="Footer"
-                description="Something here to give the footer a purpose!"
+                title="FRANK"
+                email="u0stone@yahoo.com"
             />
         </React.Fragment>
     );
 }
-//            <Main title="From the firehose" posts={posts} />
+

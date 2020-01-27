@@ -46,9 +46,9 @@ export default function MainTitleImage(props) {
           {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
           <div className={classes.overlay} />
           <Grid container>
-              <Grid item md={7}>
+              <Grid item md={8}>
                   <div className={classes.mainTitleImageContent}>
-                      <Typography component="h1" variant="h4" color="inherit" gutterBottom>
+                      <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                           {post.title}
                       </Typography>
                       <Typography variant="h5" color="inherit" paragraph>

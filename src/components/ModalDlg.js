@@ -9,7 +9,11 @@ import CloseIcon from '@material-ui/icons/Close';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Slide from '@material-ui/core/Slide';
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 const useStyles = makeStyles(theme => ({
     content: {
         padding: theme.spacing(2),
@@ -37,7 +41,7 @@ export default function ServerModal(props) {
     const handleClose = ()=>onClose();
 
     return (
-        <Dialog onClose={handleClose} aria-labelledby="dialog-title" open={open}>
+        <Dialog TransitionComponent={Transition} onClose={handleClose} aria-labelledby="dialog-title" open={open}>
             <Paper  elevation={0} className={classes.content}>
                 <DialogTitle id="dialog-title">
                     {title}

@@ -4,31 +4,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import IconButton from '@material-ui/core/IconButton';
+import EmailIcon from '@material-ui/icons/Email';
 
 const useStyles = makeStyles(theme => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     // marginTop: theme.spacing(8),
-    padding: theme.spacing(6, 0),
+    padding: theme.spacing(1, 0),
   },
 }));
 
 export default function Footer(props) {
   const classes = useStyles();
-  const { description, title } = props;
+  const { email, title } = props;
 
   return (
     <footer className={classes.footer}>
@@ -37,15 +26,14 @@ export default function Footer(props) {
           {title}
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          {description}
+          mail to : <a href="mailto:u0stone@yahoo.com" target="_top">u0stone@yahoo.com</a>
         </Typography>
-        <Copyright />
       </Container>
     </footer>
   );
 }
 
 Footer.propTypes = {
-  description: PropTypes.string,
+  url: PropTypes.string,
   title: PropTypes.string,
 };

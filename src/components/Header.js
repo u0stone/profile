@@ -54,28 +54,12 @@ export default function Header(props) {
         </Button>
          */}
 			</Toolbar>
-			<Toolbar
-				component="nav"
-				variant="dense"
-				className={classes.toolbarSecondary}
-			>
+			<Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
 				{sections.map(section => (
 					<React.Fragment key={section.title} >
-						{/**
-            <Link
-              color="inherit"
-              noWrap
-              key={section.title}
-              variant="body2"
-              href={section.url}
-              className={classes.toolbarLink}
-            >
-              {section.title}
-            </Link>
-             */}
-						<Link component={RouterLink} to={section.url}>
+						<Link component={RouterLink} to={section.url} style={{ textDecoration: 'none' }}>
 							<Button>{section.title}</Button>
-						</Link>{' '}
+						</Link>
 						<div key={section.url}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 					</React.Fragment>
 				))}
