@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
@@ -18,13 +16,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	toolbarSecondary: {
 		justifyContent: 'flex-start', //'space-between',
-
 		overflowX: 'auto'
 	},
 	toolbarLink: {
 		padding: theme.spacing(1),
 		flexShrink: 0
+	},
+	btnHover:{
+		'&:hover': { margin:"-0.5px", border: '0.5px solid', borderRadius: 3, borderColor: "#aaf", },		
 	}
+
 }));
 
 export default function Header(props) {
@@ -33,8 +34,7 @@ export default function Header(props) {
 
 	return (
 		<React.Fragment>
-			<Toolbar className={classes.toolbar}>
-				{/*<Button size="small">Subscribe</Button> Frank: 불필요해서 뺐음 */}
+			<Toolbar className={classes.toolbar}>  
 				<Typography
 					component="h2"
 					variant="h4"
@@ -45,21 +45,19 @@ export default function Header(props) {
 				>
 					{title}
 				</Typography>
-				{/**  Frank: 불필요해서 뺐음.
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
-         */}
 			</Toolbar>
 			<Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
 				{sections.map(section => (
 					<React.Fragment key={section.title} >
-						<Link component={RouterLink} to={section.url} style={{ textDecoration: 'none' }}>
-							<Button>{section.title}</Button>
-						</Link>
+						{ section.url.search(".html") < 0 ?
+							<Link component={RouterLink} to={section.url} style={{ textDecoration: 'none' }}>
+								<Button color="default" className={classes.btnHover}>{section.title}</Button>
+							</Link>
+							:
+							<Link href={section.url} style={{ textDecoration: 'none' }}>
+								<Button color="default" className={classes.btnHover}>{section.title}</Button>
+							</Link>
+						}
 						<div key={section.url}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 					</React.Fragment>
 				))}
