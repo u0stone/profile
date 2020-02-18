@@ -10,4 +10,4 @@ Building this Profile page was started from late January 2020. More features wil
     - Markdown-to-jsx: For the portfolio. Each Portfolio is made out of Markdown files.
     - EmailJS.com API: For sending emails from the contact page.
 
-You can download the full source from my github ****.
+You can download the full source from my github<br> **<https://github.com/u0stone/profile>**.
