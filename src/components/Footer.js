@@ -26,7 +26,7 @@ export default function Footer(props) {
           {title}
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          mail to : <a href="mailto:u0stone@yahoo.com" target="_top">u0stone@yahoo.com</a>
+          mail to : <a href="mailto:you.frank@yahoo.com" target="_top">you.frank@yahoo.com</a>
         </Typography>
       </Container>
     </footer>
