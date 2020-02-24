@@ -1,5 +1,5 @@
 {
-  "name": "Frank_Profile",
+  "name": "FrankProfile",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -20,7 +20,8 @@
   },
   "scripts": {
     "start": "set NODE_ENV=development&&webpack-dev-server",
-    "build": "set NODE_ENV=production&&webpack -p"
+    "build": "set NODE_ENV=production&&webpack -p",
+    "deploy": "react-scripts build&&firebase deploy"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
