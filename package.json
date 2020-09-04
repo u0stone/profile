@@ -9,7 +9,7 @@
     "css-loader": "^3.4.2",
     "emailjs-com": "^2.4.1",
     "firebase": "^7.6.2",
-    "markdown-to-jsx": "^6.10.3",
+    "markdown-to-jsx": "^6.11.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
